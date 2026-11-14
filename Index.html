@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071b14">
+<meta name="description" content="Marrakechpixim MPX DIDOO — International Advertising, Cloud Routing & Intermediation Platform across 66 Global Sectors.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Marrakechpixim MPX DIDOO — Global Enterprise Platform</title>
+<style>
+:root {
+  --bg:#071b14; --panel:#102d22; --panel2:#153c2c;
+  --gold:#dfbd68; --white:#f7f5ed; --muted:#b8c8bd;
+  --border:#315b46; --green:#1d6044; --online:#2ecc71; --danger:#e74c3c;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--white);
+font-family:Arial,Helvetica,sans-serif;line-height:1.5;scroll-behavior:smooth}
+header{background:rgba(9,31,23,0.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);
+padding:14px 18px;position:sticky;top:0;z-index:20}
+.header-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+nav,.brand,.actions,.sys-controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+nav{margin-top:10px;border-top:1px solid rgba(49,91,70,0.4);padding-top:10px;justify-content:space-between}
+.nav-links{display:flex;gap:14px;flex-wrap:wrap}
+nav a{color:var(--gold);text-decoration:none;font-size:13px;font-weight:bold;letter-spacing:0.5px;padding:4px 0}
+nav a:hover, nav a.active{border-bottom:2px solid var(--gold)}
+.brand strong{color:var(--gold);letter-spacing:2px;font-size:19px}
+.brand small{display:block;color:var(--muted)}
+.logo{border:2px solid var(--gold);border-radius:12px;padding:9px;
+font-weight:bold;color:var(--gold);background:#071b14}
+.status-badge{display:inline-flex;align-items:center;gap:6px;background:#0a2419;
+border:1px solid var(--border);padding:5px 10px;border-radius:20px;font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;background:var(--online);border-radius:50%;box-shadow:0 0 6px var(--online)}
+.currency-select{width:auto;padding:6px 10px;font-size:12px;font-weight:bold;color:var(--gold);border-color:var(--gold)}
+main{max-width:1150px;margin:auto;padding:18px}
+.hero{display:grid;grid-template-columns:1.4fr 1.1fr;gap:15px;margin:15px 0 20px}
+.panel{background:linear-gradient(145deg,var(--panel2),var(--panel));
+border:1px solid var(--border);border-radius:16px;padding:19px;margin-bottom:15px}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.1;color:var(--gold);margin-top:5px}
+h2{color:var(--gold);font-size:23px;margin-bottom:10px}
+h3{margin-top:0}
+p,.muted{color:var(--muted)}
+.robot{display:flex;flex-direction:column;justify-content:space-between;min-height:270px}
+.robot-header{text-align:center}
+.robot-icon{font-size:48px}
+.robot strong{color:var(--gold);letter-spacing:2px}
+.chat-box{background:#071a13;border:1px solid var(--border);border-radius:10px;
+padding:10px;height:135px;overflow-y:auto;font-size:12px;margin:10px 0;text-align:left}
+.chat-msg{margin-bottom:8px;padding:6px 9px;border-radius:7px}
+.chat-bot{background:#123326;color:#f7f5ed;border-left:2px solid var(--gold)}
+.chat-user{background:#1d4d3a;color:var(--gold);text-align:right}
+.chat-input-row{display:flex;gap:6px}
+.chat-input-row input{padding:9px;font-size:13px}
+.chat-input-row button{padding:9px 14px;font-size:13px}
+button,.button{background:var(--gold);color:#14251b;border:0;
+padding:11px 16px;border-radius:9px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:0.15s}
+button:hover,.button:hover{opacity:0.92;transform:translateY(-1px)}
+button:disabled{opacity:0.5;cursor:not-allowed}
+button.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+button.small-btn{padding:6px 10px;font-size:12px;border-radius:6px}
+input,select,textarea{width:100%;background:#071a13;color:white;
+border:1px solid var(--border);padding:12px;border-radius:8px;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+label{display:block;color:var(--muted);font-size:13px;margin:10px 0 5px;font-weight:bold}
+.stats,.cards,.prices,.methods,.formgrid{display:grid;gap:10px}
+.stats{grid-template-columns:repeat(4,1fr);margin-bottom:20px}
+.stat,.card,.price,.method{background:#0a2419;border:1px solid var(--border);
+border-radius:11px;padding:13px;transition:transform 0.15s, border-color 0.15s}
+.stat strong{display:block;color:var(--gold);font-size:24px}
+.cards{grid-template-columns:repeat(3,1fr)}
+.card{font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.card b{color:var(--gold);margin-right:6px}
+.card-actions{display:flex;align-items:center;gap:6px}
+.fav-star{background:none;border:none;color:var(--muted);font-size:16px;padding:2px 4px;cursor:pointer}
+.fav-star.active{color:var(--gold)}
+.card span.tag{font-size:10px;color:var(--muted);border:1px solid var(--border);padding:2px 6px;border-radius:5px}
+.prices{grid-template-columns:repeat(3,1fr)}
+.price{text-align:center;cursor:pointer}
+.price:hover{border-color:var(--gold);transform:translateY(-2px)}
+.price strong{font-size:26px;color:var(--gold)}
+.price .tier-desc{display:block;font-size:12px;color:var(--muted);margin:6px 0}
+.methods{grid-template-columns:repeat(2,1fr)}
+.method small{display:block;color:var(--muted)}
+.formgrid{grid-template-columns:1fr 1fr}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.search-group{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.search{width:260px}
+.notice{border-left:3px solid var(--gold);padding:12px;
+background:#1a3023;color:#e8dfc6;border-radius:7px;font-size:13px;margin-top:12px}
+.receipt-box{background:#071a13;border:1px dashed var(--gold);padding:14px;border-radius:9px;margin-top:12px;font-family:monospace;font-size:12px;line-height:1.6}
+.history-bar{background:#092117;border:1px solid var(--border);border-radius:10px;padding:12px;margin-top:15px;font-size:12px}
+.back-top{position:fixed;bottom:18px;right:18px;background:var(--gold);color:#071b14;border:none;border-radius:50%;width:42px;height:42px;font-weight:bold;font-size:18px;box-shadow:0 4px 12px rgba(0,0,0,0.5);display:none;z-index:30}
+footer{border-top:1px solid var(--border);padding:25px;
+color:var(--muted);font-size:12px;text-align:center;margin-top:30px}
+#messageBox{display:none;background:#183c2a;border:1px solid var(--gold);
+padding:14px;border-radius:9px;margin-top:12px;font-size:13px}
+@media(max-width:750px){
+.hero{grid-template-columns:1fr}
+.cards{grid-template-columns:repeat(2,1fr)}
+.stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+.cards{grid-template-columns:1fr}
+.formgrid{grid-template-columns:1fr}
+.methods{grid-template-columns:1fr}
+.search{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="brand">
+      <div class="logo">MPX</div>
+      <div>
+        <strong>MARRAKECHPIXIM</strong>
+        <small>Global Advertising & Intermediation Platform</small>
+      </div>
+    </div>
+    <div class="sys-controls">
+      <div class="status-badge"><span class="dot"></span> API & Routing: Live</div>
+      <select id="currencySelector" class="currency-select" onchange="updateCurrency()" title="Multi-Currency Matrix">
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="MAD">MAD (DH)</option>
+        <option value="GBP">GBP (£)</option>
+      </select>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#sectors">66 SECTORS</a>
+      <a href="#pricing">PRICING</a>
+      <a href="#finance">FINANCIAL</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+    <span id="perfIndicator" style="font-size:11px;color:var(--muted)">Ready</span>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="panel">
+    <p style="color:var(--gold);font-weight:bold;letter-spacing:1px">INTERNATIONAL BUSINESS NETWORK</p>
+    <h1>Connect Markets.<br>Build Opportunities.</h1>
+    <p>
+      Marrakechpixim is an international advertising, cloud routing, and
+      intermediation platform connecting customers, companies,
+      and business leaders across 66 global economic sectors.
+    </p>
+    <div class="actions" style="margin-top:18px">
+      <a class="button" href="#sectors">Explore 66 Sectors</a>
+      <a class="button secondary" href="#contact">Submit Request</a>
+    </div>
+  </div>
+
+  <div class="panel robot">
+    <div class="robot-header">
+      <div class="robot-icon">🤖</div>
+      <strong>MPX TECHNOLOGY ROBOT</strong>
+      <h3 style="margin-bottom:4px">MPX DIDOO</h3>
+      <small class="muted">Automated Intermediation & Routing Assistant</small>
+    </div>
+    <div class="chat-box" id="chatBox">
+      <div class="chat-msg chat-bot">
+        <b>MPX DIDOO:</b> Welcome to Marrakechpixim. Type a keyword (e.g., <i>pricing</i>, <i>banks</i>, <i>real estate</i>, <i>contact</i>) for instant navigation.
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input id="robotInput" placeholder="Ask MPX DIDOO..." onkeypress="if(event.key==='Enter') askMPX()">
+      <button onclick="askMPX()">Send</button>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><strong>66</strong>Global Sectors</div>
+  <div class="stat"><strong>6</strong>Bank Routing Profiles</div>
+  <div class="stat"><strong>16+</strong>Transfer Gateways</div>
+  <div class="stat"><strong>4</strong>Live Currencies</div>
+</div>
+
+<section id="sectors">
+  <div class="section-head">
+    <div>
+      <p style="color:var(--gold)">GLOBAL DIRECTORY (<span id="sectorCountLabel">66</span> SHOWN)</p>
+      <h2>66 Business Sectors</h2>
+    </div>
+    <div class="search-group">
+      <button class="secondary small-btn" id="favFilterBtn" onclick="toggleFavFilter()">★ Favorites Only</button>
+      <input class="search" id="sectorSearch" placeholder="Search 66 sectors..." oninput="filterSectors()">
+    </div>
+  </div>
+  <div class="cards" id="sectorCards"></div>
+</section>
+
+<section id="pricing" style="margin-top:25px">
+  <p style="color:var(--gold)">ACCESS & SERVICE LEVELS (CLICK A TIER TO SELECT)</p>
+  <h2>Multi-Currency Pricing Matrix</h2>
+  <div class="prices" id="priceCards"></div>
+  <p class="notice">
+    Live currency conversion matrix active. Click any price card to auto-select it in the Payment & Verification section.
+  </p>
+</section>
+
+<section id="finance" style="margin-top:25px">
+  <p style="color:var(--gold)">FINANCIAL SERVICES & CLEARING</p>
+  <h2>Bank Profiles — 6 Slots</h2>
+  <div class="methods" id="bankCards"></div>
+
+  <h2 style="margin-top:20px">International Transfers — 16 Methods</h2>
+  <div class="methods" id="transferCards"></div>
+
+  <div class="panel" style="margin-top:20px">
+    <h3>Transaction Verification & Digital Receipt Generator</h3>
+    <div class="formgrid">
+      <div>
+        <label for="paymentMethod">Select Transfer or Payment Method *</label>
+        <select id="paymentMethod"></select>
+      </div>
+      <div>
+        <label for="tierSelect">Select Service Tier *</label>
+        <select id="tierSelect"></select>
+      </div>
+    </div>
+    <label for="transactionRef">External Reference / Wire ID (Optional)</label>
+    <input id="transactionRef" placeholder="Enter bank wire or transfer code if already paid">
+    <div class="actions" style="margin-top:12px">
+      <button onclick="previewPayment()">Generate Verification Receipt</button>
+    </div>
+    <div id="paymentResult"></div>
+    <div class="history-bar" id="recentReceiptsBox" style="display:none"></div>
+  </div>
+</section>
+
+<section id="contact" style="margin-top:25px">
+  <p style="color:var(--gold)">ACTIVE ENTERPRISE INQUIRY FORM</p>
+  <h2>Contact Marrakechpixim</h2>
+  <div class="panel">
+    <form id="enterpriseForm" onsubmit="submitEnterpriseForm(event)">
+      <div class="formgrid">
+        <div>
+          <label for="fullName">Full Name / Entity Name *</label>
+          <input id="fullName" name="name" required placeholder="Your full name or company">
+        </div>
+        <div>
+          <label for="email">Email Address *</label>
+          <input id="email" name="email" type="email" required placeholder="name@example.com">
+        </div>
+        <div>
+          <label for="profile">Applicant Profile *</label>
+          <select id="profile" name="profile">
+            <option value="Customer">Customer</option>
+            <option value="Company">Company</option>
+            <option value="Business Leader">Business Leader</option>
+            <option value="Institutional Partner">Institutional Partner</option>
+          </select>
+        </div>
+        <div>
+          <label for="sectorChoice">Business Sector *</label>
+          <select id="sectorChoice" name="sector"></select>
+        </div>
+      </div>
+      <label for="requestDetails">Request Details & Tracking ID *</label>
+      <textarea id="requestDetails" name="message" rows="4" required
+        placeholder="Describe your advertising, intermediation, or commercial request..."></textarea>
+      <div class="actions" style="margin-top:12px">
+        <button type="submit" id="submitBtn">Send Inquiry Now (Live Dispatch)</button>
+        <button type="button" class="secondary" onclick="sendDirectEmail()">Open Mail App</button>
+      </div>
+    </form>
+    <div id="messageBox"></div>
+    <p class="notice">
+      Official Enterprise Routing: <b>business.marrakechbixim@gmail.com</b> — Direct cloud form submission is active.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <strong style="color:var(--gold)">MARRAKECHPIXIM MPX DIDOO</strong>
+  <p>International Advertising, Cloud Routing & Intermediation Platform</p>
+  <p>Enterprise Contact: business.marrakechbixim@gmail.com | High-Performance Web App</p>
+</footer>
+</main>
+
+<button class="back-top" id="backTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">↑</button>
+
+<script>
+"use strict";
+
+const t0 = performance.now();
+
+const sectors = [
+"Advertising & Marketing","Agriculture","Airlines & Aviation",
+"Architecture","Automotive","Beauty & Cosmetics",
+"Books & Publishing","Business Services","Cafés & Restaurants",
+"Cinema","Construction","Education","Electronics","Energy",
+"Events & Entertainment","Fashion","Financial Services",
+"Food & Beverage","Furniture","Gaming","Healthcare",
+"Hotels & Accommodation","Import & Export","Industrial Equipment",
+"Insurance","IT & Software","Jewelry","Legal Services",
+"Logistics","Manufacturing","Media & Broadcasting",
+"Medical Equipment","Mobile & Telecom","Music",
+"NGOs & Associations","Office Supplies","Online Marketplaces",
+"Packaging","Photography","Real Estate","Renewable Energy",
+"Retail","Security Services","Shipping & Freight","Sports",
+"Travel & Tourism","Beauty Salons","Car Rental",
+"Cleaning Services","Consulting","Courier Services",
+"Digital Creators","Home Appliances","Interior Design",
+"Language Services","Medical Clinics","Pharmacies","Printing",
+"Public Relations","Recruitment","Repair Services",
+"Solar Equipment","Translation","Transportation",
+"Veterinary Services","Cinema Tickets & Venues"
+];
+
+const banks = [
+{ name: "BBVA", status: "Active Routing — SEPA / International" },
+{ name: "Barid Bank", status: "Active Routing — Morocco / Domestic" },
+{ name: "KOHO", status: "Active Routing — North America" },
+{ name: "Bank Profile 4 — Configure", status: "Standby Slot — Ready for API" },
+{ name: "Bank Profile 5 — Configure", status: "Standby Slot — Ready for API" },
+{ name: "Bank Profile 6 — Configure", status: "Standby Slot — Ready for API" }
+];
+
+const transfers = [
+"Western Union","MoneyGram","Ria Money Transfer","Remitly",
+"Wise","WorldRemit","Xoom","Cash Plus","Barid Cash",
+"Interac e-Transfer","SEPA Transfer","SWIFT Bank Transfer",
+"International Bank Transfer","Domestic Bank Transfer",
+"Mobile Money","Cash Pickup"
+];
+
+const basePricesUSD = [
+  { val: 2, label: "Basic Listing" },
+  { val: 5, label: "Starter Ad" },
+  { val: 7, label: "Sector Boost" },
+  { val: 9, label: "Standard Pro" },
+  { val: 13, label: "Business Reach" },
+  { val: 16, label: "Multi-Market" },
+  { val: 20, label: "Enterprise Node" },
+  { val: 24, label: "Global Priority" },
+  { val: 30, label: "Executive Full" }
+];
+
+const currencyRates = {
+  USD: { symbol: "$", rate: 1 },
+  EUR: { symbol: "€", rate: 0.92 },
+  MAD: { symbol: "MAD ", rate: 10.0 },
+  GBP: { symbol: "£", rate: 0.79 }
+};
+
+let favorites = JSON.parse(localStorage.getItem("mpx_favs") || "[]");
+let showFavsOnly = false;
+
+function renderSectors(){
+  const container = document.getElementById("sectorCards");
+  const choice = document.getElementById("sectorChoice");
+  const fragCards = document.createDocumentFragment();
+  const fragOpts = document.createDocumentFragment();
+
+  sectors.forEach((name, index) => {
+    const isFav = favorites.includes(name);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.dataset.name = name.toLowerCase();
+    card.dataset.raw = name;
+
+    const leftDiv = document.createElement("div");
+    leftDiv.innerHTML = "<b>" + String(index + 1).padStart(2, "0") + "</b>" + escapeHTML(name);
+
+    const rightDiv = document.createElement("div");
+    rightDiv.className = "card-actions";
+
+    const starBtn = document.createElement("button");
+    starBtn.type = "button";
+    starBtn.className = "fav-star" + (isFav ? " active" : "");
+    starBtn.textContent = isFav ? "★" : "☆";
+    starBtn.title = "Save to Favorites";
+    starBtn.onclick = (e) => {
+      e.stopPropagation();
+      toggleFavorite(name, starBtn);
+    };
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = "Inquire";
+
+    rightDiv.appendChild(starBtn);
+    rightDiv.appendChild(tag);
+    card.appendChild(leftDiv);
+    card.appendChild(rightDiv);
+
+    card.onclick = () => selectSectorForContact(name);
+    fragCards.appendChild(card);
+
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name;
+    fragOpts.appendChild(option);
+  });
+
+  container.appendChild(fragCards);
+  choice.appendChild(fragOpts);
+}
+
+function toggleFavorite(name, btn){
+  if(favorites.includes(name)){
+    favorites = favorites.filter(f => f !== name);
+    btn.classList.remove("active");
+    btn.textContent = "☆";
+  } else {
+    favorites.push(name);
+    btn.classList.add("active");
+    btn.textContent = "★";
+  }
+  localStorage.setItem("mpx_favs", JSON.stringify(favorites));
+  if(showFavsOnly) filterSectors();
+}
+
+function toggleFavFilter(){
+  showFavsOnly = !showFavsOnly;
+  const btn = document.getElementById("favFilterBtn");
+  btn.style.background = showFavsOnly ? "var(--gold)" : "transparent";
+  btn.style.color = showFavsOnly ? "#14251b" : "var(--gold)";
+  filterSectors();
+}
+
+function filterSectors(){
+  const query = document.getElementById("sectorSearch").value.toLowerCase();
+  let visibleCount = 0;
+  document.querySelectorAll("#sectorCards .card").forEach(card => {
+    const matchesText = card.dataset.name.includes(query);
+    const matchesFav = !showFavsOnly || favorites.includes(card.dataset.raw);
+    const show = matchesText && matchesFav;
+    card.style.display = show ? "flex" : "none";
+    if(show) visibleCount++;
+  });
+  document.getElementById("sectorCountLabel").textContent = visibleCount;
+}
+
+function selectSectorForContact(sectorName){
+  const choice = document.getElementById("sectorChoice");
+  choice.value = sectorName;
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  document.getElementById("fullName").focus();
+}
+
+function renderPrices(){
+  const container = document.getElementById("priceCards");
+  const tierSelect = document.getElementById("tierSelect");
+  const curr = document.getElementById("currencySelector").value;
+  const { symbol, rate } = currencyRates[curr];
+
+  container.innerHTML = "";
+  tierSelect.innerHTML = "";
+
+  basePricesUSD.
